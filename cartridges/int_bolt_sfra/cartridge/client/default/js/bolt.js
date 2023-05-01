@@ -56,6 +56,19 @@ var callbacks = {
     success: function (transaction, callback) {
     // This function is called when the Bolt checkout transaction is successful.
         sfccData = transaction;
+        $.ajax({
+            url: $('#updateOrderUrl').val(),
+            method: 'POST',
+            data: {
+                transaction: JSON.stringify(transaction)
+            },
+            success: function (data) {
+                if (!data.success) {
+                    console.log('updating order fails');
+                }
+            }
+        });
+
         callback();
     }
 };

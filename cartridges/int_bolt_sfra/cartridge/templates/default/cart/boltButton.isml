@@ -3,6 +3,7 @@
         <input type="hidden" class="create-bolt-order-url" value="${URLUtils.https('Bolt-GetOrderReference')}" />
         <input type="hidden" id="sfccBaseVersion" name="sfccBaseVersion" value="${pdict.config.sfccBaseVersion}" />
         <input type="hidden" id="successRedirect" name="successRedirect" value="${URLUtils.url('Order-Confirm')}" />
+        <input type="hidden" id="updateOrderUrl" name="updateOrderUrl" value="${URLUtils.url('Bolt-UpdateOrder')}" />
 
         <isset name="boltCdnUrl" value="${pdict.config.boltCdnUrl}" scope="page" />
         <isset name="boltPublishableKey" value="${pdict.config.boltMultiPublishableKey}" scope="page" />
